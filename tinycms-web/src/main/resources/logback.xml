@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="log.path" value="${user.home}/Workspace/logs/tinycms2.zmlio.cn"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="common-all" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/common-all.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/common-all.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="common-warn" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/common-warn.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/common-warn.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="common-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/common-error.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/common-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="project-common" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-common.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-common.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="project-dao" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-dao.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-dao.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="project-rpc" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-rpc.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-rpc.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="project-api" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-api.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-api.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="project-service" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-service.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-service.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="project-web" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/project-web.log</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/project-web.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!-- JD Components -->
+    <logger name="com.jd.jim" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.jmq" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.jsf" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.bk.saf" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.activemq" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.cachecloud" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.service" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="com.jd.junion" level="INFO">
+        <appender-ref ref="project-common"/>
+    </logger>
+
+    <!-- open source framework loggers -->
+    <logger name="org.springframework.jdbc" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="com.alibaba.dubbo" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="org.springframework" level="INFO">
+        <appender-ref ref="common-all"/>
+    </logger>
+    <logger name="org.springframework.cache" level="DEBUG">
+        <appender-ref ref="project-common"/>
+    </logger>
+    <logger name="org.apache.zookeeper" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+    <logger name="org.springframework.transaction" level="INFO">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="org.springframework.data.mongodb" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="org.apache.activemq" level="ERROR">
+        <appender-ref ref="common-error"/>
+    </logger>
+
+    <!-- debug log for mybatis3 -->
+    <logger name="java.sql.Connection" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="java.sql.Statement" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="java.sql.PreparedStatement" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="java.sql.ResultSet" level="DEBUG">
+        <appender-ref ref="project-dao"/>
+    </logger>
+
+    <!-- log4jdbc -->
+    <logger name="jdbc.sqltiming" level="INFO">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="jdbc.sqlonly" level="OFF">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="jdbc.audit" level="OFF">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="jdbc.resultset" level="OFF">
+        <appender-ref ref="project-dao"/>
+    </logger>
+    <logger name="jdbc.connection" level="OFF">
+        <appender-ref ref="project-dao"/>
+    </logger>
+
+    <!-- project loggers -->
+    <logger name="com.jd.knowl" level="INFO">
+        <appender-ref ref="project-common"/>
+    </logger>
+    <!--<logger name="com.jd.exam.dao" level="INFO">-->
+    <!--<appender-ref ref="project-dao"/>-->
+    <!--</logger>-->
+    <!--<logger name="com.jd.exam.facade" level="INFO">-->
+    <!--<appender-ref ref="project-api"/>-->
+    <!--</logger>-->
+    <!--<logger name="com.jd.charge.rpc" level="INFO">-->
+    <!--<appender-ref ref="project-rpc"/>-->
+    <!--</logger>-->
+    <!--<logger name="com.jd.charge.service" level="INFO">-->
+    <!--<appender-ref ref="project-service"/>-->
+    <!--</logger>-->
+    <!--<logger name="com.jd.exam.web" level="INFO">-->
+    <!--<appender-ref ref="project-web"/>-->
+    <!--</logger>-->
+
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="common-all"/>
+        <appender-ref ref="common-error"/>
+        <appender-ref ref="common-warn"/>
+    </root>
+</configuration>
