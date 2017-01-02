@@ -1,6 +1,6 @@
-package cn.zmlio.tinycms2.dao;
+package tinycms2.dao;
 
-import cn.zmlio.tinycms2.ApplicationEntry;
+import cn.zmlio.tinycms2.ApplicationStarter;
 import cn.zmlio.tinycms2.entity.User;
 import cn.zmlio.tinycms2.service.UserService;
 import org.junit.Test;
@@ -10,18 +10,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.Resource;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by zml on 2017/1/1.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE,classes = ApplicationEntry.class)
+@SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE,classes = ApplicationStarter.class)
 public class UserRepositoryTest {
 
-    @MockBean
+    @Autowired
     private UserService userService;
 
     @org.junit.Before

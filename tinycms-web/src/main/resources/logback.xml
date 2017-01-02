@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <property name="log.path" value="${user.home}/Workspace/logs/tinycms2.zmlio.cn"/>
-
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
