@@ -13,7 +13,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 @EntityScan(basePackages = "cn.zmlio.tinycms2.entity")
 public class ApplicationStarter extends SpringBootServletInitializer {
 
-
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return configureApplication(builder);
