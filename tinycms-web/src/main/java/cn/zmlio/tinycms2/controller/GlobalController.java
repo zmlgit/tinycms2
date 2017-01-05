@@ -25,7 +25,9 @@ public class GlobalController implements ErrorController{
         return "index";
     }
     @RequestMapping(value = ERROR_PATH)
-    public String error(){
+    public String error(HttpServletRequest request){
+
+
         return PAGE_NOT_FOUND;
     }
 
